@@ -3,17 +3,17 @@ USE University;
 CREATE TABLE Department
 (
   ID INT NOT NULL,
-  Name INT NOT NULL,
+  Name VARCHAR(255) NOT NULL,
   PRIMARY KEY (ID)
 );
 
 CREATE TABLE Professor
 (
-  Name INT NOT NULL,
-  Gender INT NOT NULL,
   ID INT NOT NULL,
+  Name VARCHAR(255) NOT NULL,
+  Gender ENUM('male', 'female') NOT NULL,
   Salary INT NOT NULL,
-  Date_of_Birth INT NOT NULL,
+  Date_of_Birth DATE NOT NULL,
   department_id INT NOT NULL,
   PRIMARY KEY (ID),
   FOREIGN KEY (department_id) REFERENCES Department(ID)
@@ -22,8 +22,8 @@ CREATE TABLE Professor
 CREATE TABLE Research_Project
 (
   ID INT NOT NULL,
-  Name INT NOT NULL,
-  Field INT NOT NULL,
+  Name VARCHAR(255) NOT NULL,
+  Field VARCHAR(255) NOT NULL,
   Duration_in_Months INT NOT NULL,
   PRIMARY KEY (ID)
 );
@@ -31,25 +31,25 @@ CREATE TABLE Research_Project
 CREATE TABLE Grade
 (
   ID INT NOT NULL,
-  Name INT NOT NULL,
+  Name ENUM('A', 'B', 'C', 'D', 'E', 'F') NOT NULL,
   PRIMARY KEY (ID)
 );
 
-CREATE TABLE Works_on
+CREATE TABLE Professor_Research
 (
   ID INT NOT NULL,
   research_project_id INT NOT NULL,
   professor_id INT NOT NULL,
-  PRIMARY KEY (ID, ID),
+  PRIMARY KEY (ID),
   FOREIGN KEY (research_project_id) REFERENCES Research_Project(ID),
   FOREIGN KEY (professor_id) REFERENCES Professor(ID)
 );
 
 CREATE TABLE Course
 (
-  Name INT NOT NULL,
-  Code INT NOT NULL,
   ID INT NOT NULL,
+  Name VARCHAR(255) NOT NULL,
+  Code VARCHAR(255) NOT NULL,
   department_id INT NOT NULL,
   professor_id INT NOT NULL,
   PRIMARY KEY (ID),
@@ -60,14 +60,14 @@ CREATE TABLE Course
 
 CREATE TABLE Student
 (
-  Name INT NOT NULL,
-  Phone_Number INT NOT NULL,
-  Gender INT NOT NULL,
   ID INT NOT NULL,
-  Date_of_Birth INT NOT NULL,
-  Street INT NOT NULL,
-  City INT NOT NULL,
-  Town INT NOT NULL,
+  Name VARCHAR(255) NOT NULL,
+  Phone_Number VARCHAR(255) NOT NULL,
+  Gender ENUM('male', 'female') NOT NULL,
+  Date_of_Birth DATE NOT NULL,
+  Street VARCHAR(255) NOT NULL,
+  City VARCHAR(255) NOT NULL,
+  Town VARCHAR(255) NOT NULL,
   department_id INT NOT NULL,
   PRIMARY KEY (ID),
   FOREIGN KEY (department_id) REFERENCES Department(ID)
@@ -86,7 +86,7 @@ CREATE TABLE Final_Exam
 CREATE TABLE Student_Final_Exam
 (
   ID INT NOT NULL,
-  PDF_photo_copy INT NOT NULL,
+  PDF_photo_copy VARCHAR(255) NOT NULL,
   student_id INT NOT NULL,
   final_exam_id INT NOT NULL,
   PRIMARY KEY (ID),
