@@ -78,20 +78,11 @@ CREATE TABLE Final_Exam
   ID INT NOT NULL AUTO_INCREMENT,
   grade_id INT,
   course_id INT NOT NULL,
+  student_id INT NOT NULL,
   PRIMARY KEY (ID),
   FOREIGN KEY (grade_id) REFERENCES Grade(ID),
-  FOREIGN KEY (course_id) REFERENCES Course(ID)
-);
-
-CREATE TABLE Student_Final_Exam
-(
-  ID INT NOT NULL AUTO_INCREMENT,
-  PDF_photo_copy VARCHAR(255) NOT NULL,
-  student_id INT NOT NULL,
-  final_exam_id INT NOT NULL,
-  PRIMARY KEY (ID),
   FOREIGN KEY (student_id) REFERENCES Student(ID),
-  FOREIGN KEY (final_exam_id) REFERENCES Final_Exam(ID)
+  FOREIGN KEY (course_id) REFERENCES Course(ID)
 );
 
 CREATE TABLE Student_Course

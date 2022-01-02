@@ -155,7 +155,7 @@
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="student_course" generator_rows="7000000" >
+		<table name="student_course" generator_rows="10000000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
