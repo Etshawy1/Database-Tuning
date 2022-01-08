@@ -90,3 +90,23 @@ join research_project rp on
 where d.Name = 'Mechanical Electrical & Process Engineering';
   
 show profiles;
+
+SET @@profiling = 0;
+SET @@profiling_history_size = 0;
+SET @@profiling_history_size = 100; 
+SET @@profiling = 1;
+
+use optimized_university_hundred_thousand;
+select
+	distinct p.Name, rp.Name, rp.Field
+from
+	department d
+join professor p on
+	p.department_id = d.ID
+join professor_research pr on
+	pr.professor_id = p.ID
+join research_project rp on
+	rp.ID = pr.research_project_id
+where d.Name = 'Mechanical Electrical & Process Engineering';
+  
+show profiles;
