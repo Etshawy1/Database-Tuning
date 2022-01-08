@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="Unoptimized_university.sql" id="Project-5e1" database="MySql" >
-	<schema name="university" >
+<project name="Optimized_university.sql" id="Project-26ab" database="MySql" >
+	<schema name="optimized_university" >
 		<table name="course" generator_rows="100" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
 			<column name="Name" type="varchar" length="255" decimal="0" jt="12" mandatory="y" regexp="(Dairy|Beverages|Confections|Seafood|Meat|Poultry|Grain|Cereals|Produce|Shell fish|Snails)" />
-			<column name="Code" type="varchar" length="255" decimal="0" jt="12" mandatory="y" regexp="[A-Z]{3}[0-9]{3}-(19[7-9][0-9]|20[0-9]{2})" />
+			<column name="Code" type="varchar" length="255" decimal="0" jt="12" mandatory="y" regexp="[B-Z]{1}[A-Z]{1}[A-Z]{1}[0-9]{3}-(19[7-9][0-9]|20[0-9]{2})" />
 			<column name="department_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="professor_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<index name="pk_course" unique="PRIMARY_KEY" >
@@ -21,10 +21,10 @@
 			<index name="professor_id" unique="NORMAL" >
 				<column name="professor_id" />
 			</index>
-			<fk name="course_ibfk_1" to_schema="university" to_table="department" delete_action="restrict" update_action="restrict" >
+			<fk name="course_ibfk_1" to_schema="optimized_university" to_table="department" delete_action="restrict" update_action="restrict" >
 				<fk_column name="department_id" pk="ID" />
 			</fk>
-			<fk name="course_ibfk_2" to_schema="university" to_table="professor" delete_action="restrict" update_action="restrict" >
+			<fk name="course_ibfk_2" to_schema="optimized_university" to_table="professor" delete_action="restrict" update_action="restrict" >
 				<fk_column name="professor_id" pk="ID" />
 			</fk>
 		</table>
@@ -37,46 +37,6 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<table name="final_exam" generator_rows="25000" >
-			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
-				<identity><![CDATA[AUTO_INCREMENT]]></identity>
-			</column>
-			<column name="grade_id" type="int" length="10" decimal="0" jt="4" />
-			<column name="course_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="student_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
-			<index name="pk_final_exam" unique="PRIMARY_KEY" >
-				<column name="ID" />
-			</index>
-			<index name="course_id" unique="NORMAL" >
-				<column name="course_id" />
-			</index>
-			<index name="grade_id" unique="NORMAL" >
-				<column name="grade_id" />
-			</index>
-			<index name="student_id" unique="NORMAL" >
-				<column name="student_id" />
-			</index>
-			<fk name="final_exam_ibfk_2" to_schema="university" to_table="course" delete_action="restrict" update_action="restrict" >
-				<fk_column name="course_id" pk="ID" />
-			</fk>
-			<fk name="final_exam_ibfk_1" to_schema="university" to_table="grade" delete_action="restrict" update_action="restrict" >
-				<fk_column name="grade_id" pk="ID" />
-			</fk>
-			<fk name="final_exam_ibfk_2" to_schema="university" to_table="student" delete_action="restrict" update_action="restrict" >
-				<fk_column name="student_id" pk="ID" />
-			</fk>
-		</table>
-		<table name="grade" generator_rows="6" >
-			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
-				<identity><![CDATA[AUTO_INCREMENT]]></identity>
-			</column>
-			<column name="Name" type="enum" length="1" decimal="0" jt="12" mandatory="y" >
-				<enumeration><![CDATA['A','B','C','D','E','F']]></enumeration>
-			</column>
-			<index name="pk_grade" unique="PRIMARY_KEY" >
-				<column name="ID" />
-			</index>
-		</table>
 		<table name="professor" generator_rows="10000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
@@ -85,7 +45,7 @@
 			<column name="Gender" type="enum" length="6" decimal="0" jt="12" mandatory="y" >
 				<enumeration><![CDATA['male','female']]></enumeration>
 			</column>
-			<column name="Salary" type="int" length="10" decimal="0" jt="4" mandatory="y" regexp="int:from=1000;to=10000;format=######.;" />
+			<column name="Salary" type="int" length="10" decimal="0" jt="4" mandatory="y" regexp="int:from=1000;to=10000;format=#####.;" />
 			<column name="Date_of_Birth" type="date" length="10" decimal="0" jt="91" mandatory="y" regexp="date:from=&#039;01.01.1930&#039;;to=&#039;01.01.1995&#039;;" />
 			<column name="department_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<index name="pk_professor" unique="PRIMARY_KEY" >
@@ -94,7 +54,7 @@
 			<index name="department_id" unique="NORMAL" >
 				<column name="department_id" />
 			</index>
-			<fk name="professor_ibfk_1" to_schema="university" to_table="department" delete_action="restrict" update_action="restrict" >
+			<fk name="professor_ibfk_1" to_schema="optimized_university" to_table="department" delete_action="restrict" update_action="restrict" >
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
@@ -113,10 +73,10 @@
 			<index name="research_project_id" unique="NORMAL" >
 				<column name="research_project_id" />
 			</index>
-			<fk name="professor_research_ibfk_2" to_schema="university" to_table="professor" delete_action="restrict" update_action="restrict" >
+			<fk name="professor_research_ibfk_2" to_schema="optimized_university" to_table="professor" delete_action="restrict" update_action="restrict" >
 				<fk_column name="professor_id" pk="ID" />
 			</fk>
-			<fk name="professor_research_ibfk_1" to_schema="university" to_table="research_project" delete_action="restrict" update_action="restrict" >
+			<fk name="professor_research_ibfk_1" to_schema="optimized_university" to_table="research_project" delete_action="restrict" update_action="restrict" >
 				<fk_column name="research_project_id" pk="ID" />
 			</fk>
 		</table>
@@ -126,7 +86,7 @@
 			</column>
 			<column name="Name" type="varchar" length="255" decimal="0" jt="12" mandatory="y" regexp="(Re|Ad|Par|Tru|Thru|In|Bar|Cip|Dop|End|Em|Fro|Gro|Hap|Kli|Lom|Mon|Qwi|Rap|Sup|Sur|Tip|Tup|Un|Up|Var|Win|Zee)(ban|cad|dud|dim|er|frop|glib|hup|jub|kil|mun|nip|peb|pick|quest|rob|sap|sip|tan|tin|tum|ven|wer|werp|zap)(il|ic|im|in|up|ad|ack|am|on|ep|ed|ef|eg|aqu|ef|edg|op|oll|omm|ew|an|ex|pl)?(icator|or|ar|ax|an|ex|istor|entor|antor|in|over|ower|azz)" />
 			<column name="Field" type="varchar" length="255" decimal="0" jt="12" mandatory="y" regexp="(Dairy|Beverages|Confections|Seafood|Meat|Poultry|Grain|Cereals|Produce|Shell fish|Snails)" />
-			<column name="Duration_in_Months" type="int" length="10" decimal="0" jt="4" mandatory="y" regexp="int:from=00;to=36;format=##;" />
+			<column name="Duration_in_Months" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<index name="pk_research_project" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
@@ -151,13 +111,17 @@
 			<index name="department_id" unique="NORMAL" >
 				<column name="department_id" />
 			</index>
-			<fk name="student_ibfk_1" to_schema="university" to_table="department" delete_action="restrict" update_action="restrict" >
+			<fk name="student_ibfk_1" to_schema="optimized_university" to_table="department" delete_action="restrict" update_action="restrict" >
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="student_course" generator_rows="25000" >
+		<table name="student_course" generator_rows="50000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="Final_Exam_PDF" type="varchar" length="255" decimal="0" jt="12" mandatory="y" regexp="[A-Z]:\\(Windows|Win|Program|Program Files|Document and Settings|Inetpub)\\((Temp|Red Gate|Business|Sales|Test|Products|Builds|SQL Compare|SQL Data Compare|SQL Refactor|SQL Prompt|SQL Data pattern)\\){1,5}[a-z]{3,5}.(pdf)" />
+			<column name="Final_Exam_Grade" type="enum" length="1" decimal="0" jt="12" mandatory="y" >
+				<enumeration><![CDATA['A','B','C','D','E','F']]></enumeration>
 			</column>
 			<column name="student_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="course_id" type="int" length="10" decimal="0" jt="4" mandatory="y" />
@@ -170,32 +134,30 @@
 			<index name="student_id" unique="NORMAL" >
 				<column name="student_id" />
 			</index>
-			<fk name="student_course_ibfk_2" to_schema="university" to_table="course" delete_action="restrict" update_action="restrict" >
+			<fk name="student_course_ibfk_2" to_schema="optimized_university" to_table="course" delete_action="restrict" update_action="restrict" >
 				<fk_column name="course_id" pk="ID" />
 			</fk>
-			<fk name="student_course_ibfk_1" to_schema="university" to_table="student" delete_action="restrict" update_action="restrict" >
+			<fk name="student_course_ibfk_1" to_schema="optimized_university" to_table="student" delete_action="restrict" update_action="restrict" >
 				<fk_column name="student_id" pk="ID" />
 			</fk>
 		</table>
 	</schema>
-	<connector name="MySql" database="MySql" driver_class="com.mysql.jdbc.Driver" driver_jar="mysql-connector-java-8.0.23.jar" driver_desc="Standard" host="localhost" port="3306" user="root" passwd="cm9vdA==" />
-	<layout name="Parsed Script Layout" id="Layout-1478" show_relation="columns" >
-		<entity schema="university" name="course" color="3986C1" x="1296" y="240" />
-		<entity schema="university" name="department" color="3986C1" x="704" y="240" />
-		<entity schema="university" name="final_exam" color="3986C1" x="864" y="240" />
-		<entity schema="university" name="grade" color="3986C1" x="1024" y="240" />
-		<entity schema="university" name="professor" color="3986C1" x="1184" y="240" />
-		<entity schema="university" name="professor_research" color="3986C1" x="704" y="240" />
-		<entity schema="university" name="research_project" color="3986C1" x="928" y="240" />
-		<entity schema="university" name="student" color="3986C1" x="1152" y="240" />
-		<entity schema="university" name="student_course" color="3986C1" x="704" y="240" />
+	<connector name="MariaDb" database="MariaDb" driver_class="org.mariadb.jdbc.Driver" driver_jar="mariadb-java-client-2.7.2.jar" driver_desc="Standard" host="localhost" port="3306" user="root" passwd="cm9vdA==" />
+	<layout name="Parsed Script Layout" id="Layout-26f2" show_relation="columns" >
+		<entity schema="optimized_university" name="course" color="3986C1" x="848" y="176" />
+		<entity schema="optimized_university" name="department" color="3986C1" x="592" y="128" />
+		<entity schema="optimized_university" name="professor" color="3986C1" x="1040" y="176" />
+		<entity schema="optimized_university" name="professor_research" color="3986C1" x="1248" y="176" />
+		<entity schema="optimized_university" name="research_project" color="3986C1" x="640" y="176" />
+		<entity schema="optimized_university" name="student" color="3986C1" x="848" y="176" />
+		<entity schema="optimized_university" name="student_course" color="3986C1" x="1040" y="176" />
 		<callout x="48" y="48" pointer="Round" >
 			<comment><![CDATA[Current layout is generated by parsing the SQL script.
 DbSchema is in 'offline' mode (not connected to any database).]]></comment>
 		</callout>
-		<script name="Unoptimized_university.sql" id="Editor-1665" language="SQL" >
-			<string><![CDATA[CREATE DATABASE University;
-USE University;
+		<script name="Optimized_university.sql" id="Editor-1744" language="SQL" >
+			<string><![CDATA[CREATE DATABASE optimized_university;
+USE optimized_university;
 CREATE TABLE Department
 (
   ID INT NOT NULL AUTO_INCREMENT,
@@ -221,13 +183,6 @@ CREATE TABLE Research_Project
   Name VARCHAR(255) NOT NULL,
   Field VARCHAR(255) NOT NULL,
   Duration_in_Months INT NOT NULL,
-  PRIMARY KEY (ID)
-);
-
-CREATE TABLE Grade
-(
-  ID INT NOT NULL AUTO_INCREMENT,
-  Name ENUM('A', 'B', 'C', 'D', 'E', 'F') NOT NULL,
   PRIMARY KEY (ID)
 );
 
@@ -269,21 +224,11 @@ CREATE TABLE Student
   FOREIGN KEY (department_id) REFERENCES Department(ID)
 );
 
-CREATE TABLE Final_Exam
-(
-  ID INT NOT NULL AUTO_INCREMENT,
-  grade_id INT,
-  course_id INT NOT NULL,
-  student_id INT NOT NULL,
-  PRIMARY KEY (ID),
-  FOREIGN KEY (grade_id) REFERENCES Grade(ID),
-  FOREIGN KEY (student_id) REFERENCES Student(ID),
-  FOREIGN KEY (course_id) REFERENCES Course(ID)
-);
-
 CREATE TABLE Student_Course
 (
   ID INT NOT NULL AUTO_INCREMENT,
+  Final_Exam_PDF VARCHAR(255) NOT NULL,
+  Final_Exam_Grade ENUM('A', 'B', 'C', 'D', 'E', 'F') NOT NULL,
   student_id INT NOT NULL,
   course_id INT NOT NULL,
   PRIMARY KEY (ID),

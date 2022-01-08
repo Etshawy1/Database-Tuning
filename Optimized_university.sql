@@ -1,4 +1,4 @@
-CREATE DATABASE Optimized_University;
+CREATE DATABASE optimized_university;
 USE Optimized_University;
 CREATE TABLE Department
 (

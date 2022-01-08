@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="Unoptimized_university.sql" id="Project-5e1" database="MySql" >
 	<schema name="university" >
-		<table name="course" generator_rows="10000" >
+		<table name="course" generator_rows="1000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -37,7 +37,7 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<table name="final_exam" generator_rows="6000000" >
+		<table name="final_exam" generator_rows="250000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -77,7 +77,7 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<table name="professor" generator_rows="1000000" >
+		<table name="professor" generator_rows="100000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -98,7 +98,7 @@
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="professor_research" generator_rows="4000000" >
+		<table name="professor_research" generator_rows="40000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -120,7 +120,7 @@
 				<fk_column name="research_project_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="research_project" generator_rows="2000000" >
+		<table name="research_project" generator_rows="20000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -131,7 +131,7 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<table name="student" generator_rows="4000000" >
+		<table name="student" generator_rows="300000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -155,7 +155,7 @@
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="student_course" generator_rows="10000000" >
+		<table name="student_course" generator_rows="250000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
