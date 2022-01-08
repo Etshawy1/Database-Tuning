@@ -1,5 +1,5 @@
 #!/bin/bash
-schema_name=university
+schema_name=university_hundred_thousand
 db_username=root
 db_passwrod=root
 db_port=3306
