@@ -37,7 +37,7 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<table name="professor" generator_rows="10000" >
+		<table name="professor" generator_rows="5000000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -58,7 +58,7 @@
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="professor_research" generator_rows="4000" >
+		<table name="professor_research" generator_rows="3600000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -80,7 +80,7 @@
 				<fk_column name="research_project_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="research_project" generator_rows="2000" >
+		<table name="research_project" generator_rows="800000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -91,7 +91,7 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<table name="student" generator_rows="30000" >
+		<table name="student" generator_rows="1000000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
@@ -115,7 +115,7 @@
 				<fk_column name="department_id" pk="ID" />
 			</fk>
 		</table>
-		<table name="student_course" generator_rows="50000" >
+		<table name="student_course" generator_rows="2000000" >
 			<column name="ID" type="int" length="10" decimal="0" jt="4" mandatory="y" >
 				<identity><![CDATA[AUTO_INCREMENT]]></identity>
 			</column>
