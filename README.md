@@ -4,18 +4,18 @@
 
 ## Table of contents
 
-- [Introduction](##Introduction)
-- [Description](##Description)
-- [Database ERD](##Database-ERD)
-- [Experiment Queries](##Experiment-Queries)
-  - [MySQL Performance](###MySQL-Performance)
-  - [MongoDB Performance](###MongoDB-Performance)
-  - [MySQL vs MongoDB Performance](###MySQL-vs-MongoDB-Performance)
-- [Hardware Characteristics](##Hardware-Characteristics)
-- [Recommendations](##Recommendations)
-- [References](##References)
-- [Contributors](##Contributors)
-- [License](##License)
+- [Introduction](#Introduction)
+- [Description](#Description)
+- [Database ERD](#Database-ERD)
+- [Experiment Queries](#Experiment-Queries)
+  - [MySQL Performance](#MySQL-Performance)
+  - [MongoDB Performance](#MongoDB-Performance)
+  - [MySQL vs MongoDB Performance](#MySQL-vs-MongoDB-Performance)
+- [Hardware Characteristics](#Hardware-Characteristics)
+- [Recommendations](#Recommendations)
+- [References](#References)
+- [Contributors](#Contributors)
+- [License](#License)
 
 ## Introduction
 
