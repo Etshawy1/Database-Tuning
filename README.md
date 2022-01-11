@@ -1,6 +1,8 @@
 # Database Tuning
 
-<img src="./images/icon.svg" width="300"/>
+<p align="center"> 
+  <img src="./images/icon.svg" width="300"/>
+</p>
 
 ## Table of contents
 
