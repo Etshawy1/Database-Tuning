@@ -91,6 +91,7 @@ In this Repository we experiment with the different concepts of database tuning 
 
 - [MySQL Shell](https://dev.mysql.com/downloads/shell/)
 - [DBSchema](https://dbschema.com/)
+- [ERD Plus](https://erdplus.com/)
 - [MySQL 5.7](https://dev.mysql.com/downloads/mysql/5.7.html)
 - [MongoDB 4.4](https://docs.mongodb.com/v4.4/installation/)
 - <a href="https://www.freepik.com/vectors/abstract">Abstract vector created by vectorjuice - www.freepik.com</a>
