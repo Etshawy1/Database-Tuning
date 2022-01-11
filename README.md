@@ -103,4 +103,4 @@ In this Repository we experiment with the different concepts of database tuning 
 
 ## License
 
-- Licensed under the [MIT License](./License).
+- Licensed under the [MIT License](./LICENSE).
