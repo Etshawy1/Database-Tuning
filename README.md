@@ -98,8 +98,8 @@ In this Repository we experiment with the different concepts of database tuning 
 
 ## Contributors
 
-- [Muhammed Ahmad Hesham](https://github.com/Etshawy1)
-- [Muhammed Alaa](https://github.com/MuhammeedAlaa)
+- [Muhammad Ahmad Hesham](https://github.com/Etshawy1)
+- [Muhammad Alaa](https://github.com/MuhammeedAlaa)
 
 ## License
 
