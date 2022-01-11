@@ -1,6 +1,6 @@
 # Database Tuning
 
-![icon](./images/icon.svg)
+<img src="./images/icon.svg" width="300"/>
 
 ## Table of contents
 
